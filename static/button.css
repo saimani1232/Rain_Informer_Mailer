@@ -1,0 +1,82 @@
+.toggle-switch {
+    position: relative;
+    width: 120px;
+    height: 50px;
+    background-color: #87CEEB;
+    border-radius: 25px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.5s ease;
+    margin: 0 auto;
+  }
+  
+  .toggle-switch .switch {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    transition: left 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+  
+  .toggle-switch.day .switch {
+    left: 5px;
+  }
+  
+  .toggle-switch.night .switch {
+    left: 75px;
+    background-color: black;
+  }
+  
+  .toggle-switch.day {
+    background-color: #87CEEB;
+  }
+  
+  .toggle-switch.night {
+    background-color: #2C3E50;
+  }
+  
+  .sun, .moon, .cloud, .stars {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: opacity 0.5s ease;
+    font-size: 18px;  /* Reduced from 20px */
+  }
+  
+  .sun {
+    left: 8px;
+    color: yellow;
+  }
+  
+  .cloud {
+    left: 30px;
+    color: white;
+  }
+  
+  .moon {
+    right: 10px;
+    color: lightgray;
+    opacity: 0;
+  }
+  
+  .stars {
+    right: 30px;
+    color: white;
+    opacity: 0;
+  }
+  
+  .toggle-switch.night .sun,
+  .toggle-switch.night .cloud {
+    opacity: 0;
+  }
+  
+  .toggle-switch.night .moon,
+  .toggle-switch.night .stars {
+    opacity: 1;
+  }
+  
