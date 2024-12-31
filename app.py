@@ -6,8 +6,8 @@ app = Flask(__name__)
 app.secret_key = 'my-key'
 
 # Email configuration
-MY_EMAIL = "macherlasaimani@gmail.com"
-MY_PASSWORD = "pgxyemusugognilr"
+MY_EMAIL ="YOUR-MAIL"
+MY_PASSWORD = "YOUR-PASSWORD"
 
 OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
 GEO_API_URL = "https://api.api-ninjas.com/v1/geocoding"
