@@ -23,3 +23,7 @@ A simple web application built with Flask that sends an email notification if it
 
 ## 📂 Project Structure
 Rain-Informer-Mailer/ │── static/ # Contains CSS, JS, and other static files │── templates/ # HTML templates for rendering pages │── app.py # Main Flask application │── README.md # Project documentation
+
+1️⃣Run the Application
+1)python app.py
+2)Open your browser and navigate to http://127.0.0.1:5000/
