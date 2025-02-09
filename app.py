@@ -12,8 +12,8 @@ MY_PASSWORD = "YOUR-PASSWORD"
 OPEN_METEO_URL = "https://api.open-meteo.com/v1/forecast"
 GEO_API_URL = "https://api.api-ninjas.com/v1/geocoding"
 LOC_API_URL="https://us1.locationiq.com/v1/reverse"
-GEO_API_KEY = "Boqkz/8nYLDc0o5MtFFr6w==F517vdZp1Kn97Pg4"
-LOC_API_KEY="pk.c8288002668707550c9fcf7915892e64"
+GEO_API_KEY = "YOUR GEO_API KEY"
+LOC_API_KEY="YOUR LOC_API KEY"
 
 def send_email(recipient,location):
     with smtplib.SMTP("smtp.gmail.com", 587) as connection:
