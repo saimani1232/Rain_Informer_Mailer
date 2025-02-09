@@ -27,3 +27,27 @@ Rain-Informer-Mailer/ │── static/ # Contains CSS, JS, and other static fil
 1️⃣Run the Application
 1)python app.py
 2)Open your browser and navigate to http://127.0.0.1:5000/
+
+🔥 Usage
+Enter your city name to check the weather.
+If rain is detected, an email notification will be sent to the configured address.
+Stay prepared for rainy days! ☔
+📧 Email Notification Preview
+Subject: 🌧️ Rain Alert for Today!
+Body: It looks like it's going to rain today. Don't forget to carry an umbrella! ☔
+
+🎯 To-Do / Future Enhancements
+✅ Add user authentication for personalized notifications.
+✅ Enable scheduling of daily weather alerts.
+✅ Implement a database to store user preferences.
+
+🤝 Contributing
+Pull requests are welcome! For major changes, please open an issue first to discuss what you’d like to change.
+
+📬 Contact
+If you have any questions or suggestions, feel free to reach out:
+📧 Email: macherlasaimani@gmail.com
+🐙 GitHub: saimani1232
+
+Made with ❤️ using Flask. Stay dry and stay safe! 🌧️☂️
+
