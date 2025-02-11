@@ -15,7 +15,7 @@ A simple web application built with Flask that sends an email notification if it
 
 ## 🛠️ Tech Stack
 - **Backend:** Flask (Python)
-- **Frontend:** HTML, CSS
+- **Frontend:** HTML, CSS ,JS
 - **API:** OpenWeatherMap (or any weather API of your choice)
 - **Email Service:** SMTP for sending notifications
 
