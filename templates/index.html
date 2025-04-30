@@ -13,328 +13,469 @@
    <style>
      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 
+     * {
+       box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+     }
+
      body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to right, #ffcc33 40%, #0099ff 70%, #666666);
-    margin: 0;
-    box-sizing: border-box;
-    height: 100vh;
-    background-size: 200% 200%; /* Allows for animation */
-    animation: breathe 10s ease infinite; /* Applies breathing effect */
-}
-.first{
-			width: 16rem;
-			/* border: 2px solid black; */
-			height: 100%;
-			padding: 2rem;
-		}
-
-/* Define the animated gradient background */
-body.light-mode {
-  background-image: linear-gradient(to right, #ffcc33 40%, #0099ff 70%, #666666);
-}
-
-body.dark-mode {
-  background-image: linear-gradient(to left, #1d4350, #a43931);
-}
-
-/* Define the breathing animation */
-@keyframes breathe {
-  0% {
-    background-position: 0% 50%; /* Start position */
-  }
-  50% {
-    background-position: 100% 50%; /* Middle position */
-  }
-  100% {
-    background-position: 0% 50%; /* End position, returns to start */
-  }
-}
-
-.main_text {
-  color: #3c096b;
-  display: flex;
-  font-weight: bold;
-  font-size: 2rem;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 25px;
-  margin-left: 0rem;
-  margin-right: 9rem;
-
-}
-.inner_text{
-  margin-top: 1rem;
-margin-left: 28%;
-color: rgb(46, 44, 44);
-font-size: 23px;
-/* margin-right: 50%; */
-}
-
-.container {
-  display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    margin-bottom: 20px;
-    width: 80%; /* Ensure a fixed width for the container */
-}
-
-.block {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 350px;
-    height: 350px;
-    position: relative;
-}
-
-    h3 {
-        text-align: center;
-    }
-
-    input {
-        margin-bottom: 10px;
-        padding: 8px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-    button {
-        margin-bottom: 10px;
-        padding: 8px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        height: 2.5rem;
-        align-self: center;
-        width: 8.5rem;
-        /* align-items: center; */
-        margin-left: 35%;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-
-    .glow-on-hover1, .glow-on-hover2 {
-    width: 200px;
-    height: 50px;
-    font-size: 1rem;
-    border: none;
-    outline: none;
-    color: #fff;
-    background: #111;
-    cursor: pointer;
-    position: absolute;
-    bottom: 20px; /* Ensure consistent vertical positioning */
-    left: -2.5rem; /* Center the button horizontally */
-    z-index: 0;
-    border-radius: 10px;
-}
-
-.glow-on-hover1:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-on-hover1:active {
-    color: #000
-}
-
-.glow-on-hover1:active:after {
-    background: transparent;
-}
-
-.glow-on-hover1:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover1:after {
-    z-index: -1;
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--glow-background, black);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
-
-.glow-on-hover2:before {
-    content: '';
-    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
-    position: absolute;
-    top: -2px;
-    left:-2px;
-    background-size: 400%;
-    align-self: flex-end;
-    z-index: -1;
-    filter: blur(5px);
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    animation: glowing 20s linear infinite;
-    opacity: 0;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-}
-
-.glow-on-hover2:active {
-    color: #000
-}
-
-.glow-on-hover2:active:after {
-    background: transparent;
-}
-
-.glow-on-hover2:hover:before {
-    opacity: 1;
-}
-
-.glow-on-hover2:after {
-    z-index: -1;
-    content: '';
-    align-self: flex-end;
-
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: var(--glow-background, black);
-    left: 0;
-    top: 0;
-    border-radius: 10px;
-}
-
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
-
-    .emoji {
-      font-size: 2rem;
-      margin:0;
-      padding:0;
-    }
-
-    .location {
-      font-weight: bold;
-      margin:0;
-      padding:0;
-    }
-
-    .compass {
-      width: 25px;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-    .weather-info {
+      font-family: 'Poppins', Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-around;
-      margin-top: 10px;
-      margin: auto;
-      width:350px;
-    }
-    .alert {
-      margin: auto;
-           padding: 10px;
-      background-color: #ff4c4c;
-      color: white;
-      border-radius: 5px;
-      width:350px;
+      background: linear-gradient(to right, #ffcc33 40%, #0099ff 70%, #666666);
+      min-height: 100vh;
+      background-size: 200% 200%;
+      animation: breathe 10s ease infinite;
+      padding: 20px;
+     }
 
-      text-align: center;
-          }
-      .result_container{
-      display: flex;
-      flex-direction:column;
-      align-items: flex-start;
-        margin-bottom: 4.5rem;
-      width: 600px;
+     .first {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      padding: 1rem;
+      margin-bottom: 2rem;
+     }
 
-    }
-    #clock {
-    font-size: 1.4rem;
-    width: 160px;
-    margin: 0;
-    text-align: center;
-    /* margin-top: 2.5rem; */
-    border-radius: 20px;
-}
-.clock_img{
-  height: 2rem;
-  width: 2rem;
+     /* Define the animated gradient background */
+     body.light-mode {
+       background-image: linear-gradient(to right, #ffcc33 40%, #0099ff 70%, #666666);
+     }
 
-}
-.clock_div{
-  width: 100%;
-  display: flex;
-  gap: 1rem;
-align-items: center;
-  justify-content: flex-start;
-}
-canvas{
-  width: 500px;
-}
+     body.dark-mode {
+       background-image: linear-gradient(to left, #1d4350, #a43931);
+     }
 
-.hide{
-  display: none;
-}
+     /* Define the breathing animation */
+     @keyframes breathe {
+       0% {
+         background-position: 0% 50%;
+       }
+       50% {
+         background-position: 100% 50%;
+       }
+       100% {
+         background-position: 0% 50%;
+       }
+     }
 
-  </style>
+     .main_text {
+       color: #3c096b;
+       display: flex;
+       font-weight: bold;
+       font-size: clamp(1.5rem, 4vw, 2rem);
+       flex-direction: column;
+       justify-content: center;
+       align-items: center;
+       margin-top: 10px;
+       text-align: center;
+       width: 100%;
+     }
+
+     .inner_text {
+       margin-top: 0.5rem;
+       color: rgb(46, 44, 44);
+       font-size: clamp(1rem, 3vw, 1.4rem);
+       text-align: center;
+     }
+
+     .container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       gap: 30px;
+       width: 100%;
+       max-width: 1200px;
+       margin-bottom: 20px;
+     }
+
+     @media (min-width: 992px) {
+       .container {
+         flex-direction: row;
+         flex-wrap: wrap;
+         justify-content: center;
+       }
+     }
+
+     .block {
+       background-color: white;
+       display: flex;
+       flex-direction: column;
+       justify-content: flex-start;
+       align-items: center;
+       padding: 20px;
+       border-radius: 10px;
+       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+       width: 100%;
+       max-width: 350px;
+       height: auto;
+       min-height: 350px;
+       position: relative;
+       margin: 0 auto;
+     }
+
+     .block form {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+     }
+
+     h3 {
+       text-align: center;
+       margin-bottom: 15px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-wrap: wrap;
+       gap: 5px;
+     }
+
+     input {
+       margin-bottom: 15px;
+       padding: 10px;
+       width: 100%;
+       border: 1px solid #ccc;
+       border-radius: 5px;
+     }
+
+     label {
+       margin-bottom: 5px;
+       font-weight: 500;
+     }
+
+     .glow-on-hover1, .glow-on-hover2 {
+       width: 200px;
+       height: 50px;
+       font-size: 1rem;
+       border: none;
+       outline: none;
+       color: #fff;
+       background: #111;
+       cursor: pointer;
+       position: relative;
+       margin: 20px auto 0;
+       z-index: 0;
+       border-radius: 10px;
+     }
+
+     .glow-on-hover1:before, .glow-on-hover2:before {
+       content: '';
+       background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+       position: absolute;
+       top: -2px;
+       left: -2px;
+       background-size: 400%;
+       z-index: -1;
+       filter: blur(5px);
+       width: calc(100% + 4px);
+       height: calc(100% + 4px);
+       animation: glowing 20s linear infinite;
+       opacity: 0;
+       transition: opacity .3s ease-in-out;
+       border-radius: 10px;
+     }
+
+     .glow-on-hover1:active, .glow-on-hover2:active {
+       color: #000;
+     }
+
+     .glow-on-hover1:active:after, .glow-on-hover2:active:after {
+       background: transparent;
+     }
+
+     .glow-on-hover1:hover:before, .glow-on-hover2:hover:before {
+       opacity: 1;
+     }
+
+     .glow-on-hover1:after, .glow-on-hover2:after {
+       z-index: -1;
+       content: '';
+       position: absolute;
+       width: 100%;
+       height: 100%;
+       background: var(--glow-background, black);
+       left: 0;
+       top: 0;
+       border-radius: 10px;
+     }
+
+     @keyframes glowing {
+       0% { background-position: 0 0; }
+       50% { background-position: 400% 0; }
+       100% { background-position: 0 0; }
+     }
+
+     .emoji {
+       font-size: 2rem;
+       margin: 0;
+       padding: 0;
+     }
+
+     .location {
+       font-weight: bold;
+       margin: 0;
+       padding: 0;
+       text-align: center;
+       word-break: break-word;
+     }
+
+     .compass {
+       width: 25px;
+       margin: 0 5px;
+     }
+
+     .weather-info {
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       flex-wrap: wrap;
+       gap: 10px;
+       margin-top: 10px;
+       width: 100%;
+       max-width: 500px;
+       padding: 10px;
+     }
+
+     .alert {
+       margin: auto;
+       padding: 10px;
+       background-color: #ff4c4c;
+       color: white;
+       border-radius: 5px;
+       width: 100%;
+       max-width: 500px;
+       text-align: center;
+       margin-bottom: 15px;
+     }
+
+     .result_container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       width: 100%;
+       max-width: 600px;
+       margin-bottom: 2rem;
+     }
+
+     #clock {
+       font-size: 1.4rem;
+       width: 160px;
+       margin: 0;
+       text-align: center;
+       border-radius: 20px;
+     }
+
+     .clock_img {
+       height: 2rem;
+       width: 2rem;
+     }
+
+     .clock_div {
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       margin-bottom: 15px;
+     }
+
+     @media (min-width: 768px) {
+       .clock_div {
+         flex-direction: row;
+         gap: 1rem;
+         justify-content: center;
+       }
+     }
+
+     canvas {
+       max-width: 100%;
+       height: auto;
+     }
+
+     .hide {
+       display: none;
+     }
+
+     #map {
+       width: 100%;
+       height: 300px;
+       margin-top: 15px;
+       border-radius: 5px;
+     }
+
+     .map-inputs {
+       display: flex;
+       flex-wrap: wrap;
+       justify-content: space-between;
+       gap: 10px;
+       margin-top: 15px;
+     }
+
+     .map-inputs label, .map-inputs input {
+       margin: 0;
+     }
+
+     .map-inputs input {
+       width: 110px;
+     }
+
+     .toggle-switch {
+       position: relative;
+       width: 100px;
+       height: 50px;
+       background: #add8e6;
+       border-radius: 25px;
+       cursor: pointer;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       padding: 0 15px;
+       box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+       margin: 10px 0;
+     }
+
+     .toggle-switch.day {
+       background: linear-gradient(#87CEEB, #add8e6);
+     }
+
+     .toggle-switch.night {
+       background: linear-gradient(#2c3e50, #34495e);
+     }
+
+     .switch {
+       position: absolute;
+       left: 5px;
+       width: 40px;
+       height: 40px;
+       background: #f5f5f5;
+       border-radius: 50%;
+       transition: all 0.3s ease;
+       z-index: 1;
+     }
+
+     .toggle-switch.night .switch {
+       left: calc(100% - 45px);
+       background: #ddd;
+     }
+
+     .sun, .moon, .cloud, .stars {
+       font-size: 20px;
+       position: relative;
+       z-index: 2;
+     }
+
+     .moon, .stars {
+       opacity: 0;
+       transition: opacity 0.3s ease;
+     }
+
+     .toggle-switch.night .sun, .toggle-switch.night .cloud {
+       opacity: 0;
+     }
+
+     .toggle-switch.night .moon, .toggle-switch.night .stars {
+       opacity: 1;
+     }
+
+     @media (max-width: 768px) {
+       .toggle-switch {
+         width: 80px;
+         height: 40px;
+       }
+       
+       .switch {
+         width: 30px;
+         height: 30px;
+       }
+       
+       .toggle-switch.night .switch {
+         left: calc(100% - 35px);
+       }
+       
+       .sun, .moon, .cloud, .stars {
+         font-size: 16px;
+       }
+     }
+
+     #user_form {
+       max-width: 400px;
+       width: 100%;
+       margin: auto;
+       padding: 20px;
+       background-color: #f0f0f0;
+       border-radius: 12px;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     }
+
+     #user_form label {
+       font-weight: bold;
+       font-size: 1.2rem;
+       margin-bottom: 10px;
+       display: block;
+     }
+
+     #user_form input {
+       padding: 12px;
+       width: 100%;
+       border: 2px solid #007bff;
+       border-radius: 8px;
+       font-size: 1rem;
+       margin-bottom: 20px;
+       box-sizing: border-box;
+     }
+
+     #user_form button {
+       width: 100%;
+       max-width: 200px;
+       padding: 12px;
+       background: linear-gradient(45deg, #4caf50, #1e88e5);
+       color: white;
+       font-size: 1.1rem;
+       font-weight: bold;
+       border: none;
+       border-radius: 8px;
+       cursor: pointer;
+       transition: background 0.3s ease-in-out;
+       margin: 0 auto;
+       display: block;
+     }
+   </style>
 </head>
-<body>
+<body class="light-mode">
   <div class="clock_div">
-    <canvas id="canvas"></canvas>
-
-  <div style="display: inline-block;" class="main_text">"WeatherWatch: Track Rain, Anywhere"<div class="inner_text"></div></div>
-  <div class="scene">
-    <div class="toggle-switch day" id="toggleSwitch">
-      <div class="switch"></div>
-      <div class="sun">☀️</div>
-      <div class="cloud">☁️</div>
-      <div class="moon">🌙</div>
-      <div class="stars">✨</div>
+    <canvas id="canvas" width="150" height="150"></canvas>
+    <div class="main_text">"WeatherWatch: Track Rain, Anywhere"
+      <div class="inner_text"></div>
     </div>
-</div>
-</div>
-  <div class="container">
+    <div class="scene">
+      <div class="toggle-switch day" id="toggleSwitch">
+        <div class="switch"></div>
+        <div class="sun">☀️</div>
+        <div class="cloud">☁️</div>
+        <div class="moon">🌙</div>
+        <div class="stars">✨</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="first">
+    <form id="user_form">
+      <label for="user_name">
+        🌟 Enter Your Name:
+      </label>
+      <input type="text" id="user_name" name="user_name" placeholder="e.g. Peter" required />
+      <button type="submit">
+        🚀 Submit
+      </button>
+    </form>
+  </div>
+
+  <div class="container hide">
     <!-- Latitude/Longitude Block -->
-    <div class="block" style="margin-right: 1.8rem; width:420px;">
-      <h3><img class=" compass"  src="/static/map.png">By Latitude & Longitude<img class="compass" src="/static/location.png"></h3>
+    <div class="block">
+      <h3><img class="compass" src="/static/map.png">By Latitude & Longitude<img class="compass" src="/static/location.png"></h3>
       <form method="POST">
         <input type="hidden" name="input_type" value="latlong" />
         <label>Latitude:</label>
@@ -346,311 +487,333 @@ canvas{
         <label>Recipient Email:</label>
         <input type="email" name="recipient_email_latlong" required />
 
-        <button type="submit" class="glow-on-hover1" >Check Weather</button>
+        <button type="submit" class="glow-on-hover1">Check Weather</button>
       </form>
     </div>
 
     <!-- City Name Block -->
-    <div class="block" style="margin-left: 2rem;margin-right: 2rem;">
+    <div class="block">
       <h3><img src="/static/cityscape.png" class="compass"> City Name <img src="/static/architecture-and-city.png" class="compass"></h3>
       <form method="POST">
         <input type="hidden" name="input_type" value="city" />
-        <label style="margin-top: 5rem;">City Name:</label>
-        <input type="text" name="city_name" style="margin-bottom: 4.6rem;"  required />
+        <label>City Name:</label>
+        <input type="text" name="city_name" required />
 
         <label>Recipient Email:</label>
         <input type="email" name="recipient_email_city" required />
 
-        <button type="submit" class="glow-on-hover2" style="align-self: flex-end;">Check Weather</button>
+        <button type="submit" class="glow-on-hover2">Check Weather</button>
       </form>
     </div>
-    <div class="block" style="margin-left: 1rem;" >
-      Select a Location on the Map
-        <div id="map" style="width: 350px;
-          height: 350px;"></div>
-        <form type="POST">
-        <label>Latitude:</label>
-        <input type="text" id="latitude" readonly style="width:75px ; height: 25px; margin-top: 10px;">
 
-        <label>Longitude:</label>
-        <input type="text" id="longitude" readonly style="width:75px ;height: 25px; margin-top: 10px;" />
-        </form>
+    <!-- Map Block -->
+    <div class="block">
+      <h3>Select a Location on the Map</h3>
+      <div id="map"></div>
+      <div class="map-inputs">
+        <div>
+          <label>Latitude:</label>
+          <input type="text" id="latitude" readonly>
         </div>
-  </div>
-  <div class="first">
-    <form method="POST" style="max-width: 400px; margin: auto; padding: 20px; background-color: #f0f0f0; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);" id="nameform">
-      <label for="name" style="font-weight: bold; font-size: 1.2rem; margin-bottom: 10px; display: block;">
-        🌟 Enter Your Name:
-      </label>
-      <input type="text" id="user_name" name="user_name"  placeholder="e.g:-Peter"
-        style="padding: 12px; width: 100%; border: 2px solid #007bff; border-radius: 8px; font-size: 1rem; margin-bottom: 20px; box-sizing: border-box;"
-        required />
-
-      <button type="submit" style="
-        width: 10rem;
-        /* padding: 12px;  */
-        background: linear-gradient(45deg, #4caf50, #1e88e5);
-        color: white;
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin-left: 2rem;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        transition: background 0.3s ease-in-out;
-      ">
-        🚀 Submit
-      </button>
-
-      </form>
+        <div>
+          <label>Longitude:</label>
+          <input type="text" id="longitude" readonly>
+        </div>
       </div>
-  <div class="result_container">
-<!--
-  Flash Message Section-->
-  {% with messages = get_flashed_messages() %}
-    {% if messages %}
-      <div class="alert">{{ messages[0] }}</div>
-    {% endif %}
-  {% endwith %}
-<!--
-  Weather Info Section - We will Display Only If Available-->
-  {% if emoji and location %}
-    <div class="weather-info">
-      <span class="emoji">{{ emoji }}</span>
-      <span class="location">{{ location }}</span>
     </div>
-  {% endif %}
- </div>
-<script>
-  const form=document.getElementById('nameform')
-  const button = document.querySelector('button');
-  const first=document.querySelector('.first');
-  const text=document.getElementById('user_name');
-  const inner=document.querySelector('.inner_text');
-  const info=document.querySelector('.weather-info');
-  const container=document.querySelector(".container");
-  container.classList.add('hide')
+  </div>
 
-  form.addEventListener('submit',function(event){
-    event.preventDefault();
-    const name=text.value;
-    inner.textContent=`🎉 Welcome , ${name}`;
-    container.classList.remove('hide');
-    first.classList.add('hide');
-  })
+  <div class="result_container">
+    <!-- Flash Message Section -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="alert">{{ messages[0] }}</div>
+      {% endif %}
+    {% endwith %}
 
-  const canvas = document.getElementById('canvas');
-const ctx = canvas.getContext('2d');
+    <!-- Weather Info Section -->
+    {% if emoji and location %}
+      <div class="weather-info">
+        <span class="emoji">{{ emoji }}</span>
+        <span class="location">{{ location }}</span>
+      </div>
+    {% endif %}
+  </div>
 
-// set the start point of the hour, minute and second hand to top
-const threePIByTwo = (3 * Math.PI) / 2;
+  <script>
+    // Name form handling
+    const userForm = document.getElementById('user_form');
+    const userName = document.getElementById('user_name');
+    const innerText = document.querySelector('.inner_text');
+    const container = document.querySelector(".container");
+    const firstDiv = document.querySelector('.first');
+    const weatherInfo = document.querySelector('.weather-info');
 
-console.log(threePIByTwo);
+    userForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+      const name = userName.value;
+      if (name) {
+        innerText.textContent = `🎉 Welcome, ${name}`;
+        container.classList.remove('hide');
+        firstDiv.classList.add('hide');
+      }
+    });
 
-let amOrPm = 'AM';
+    // Clock functionality
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
 
-const canvasBg = '';
-
-// Define colors for hour, minute and second hand
-const hourActiveColor = '#39D98A',
-	minuteActiveColor = '#3E7BFA',
-	secondActiveColor = '#FDAC42';
-
-// Define inactive colors for hour, minute and second hand
-const hourInactiveColor = '#3C4043',
-	minuteInactiveColor = '#2E3134',
-	secondInactiveColor = '#282A2D';
-
-const timerBg = '#282A2D';
-
-function init()
-{
-	canvas.width = document.documentElement.clientWidth - 35;
-	canvas.height = document.documentElement.clientHeight - 45;
-
-	// This calls the draw function repeatedly at a rate of 60 times per second
-	window.requestAnimationFrame(draw);
-}
-
-function draw()
-{
-	// Finding center point of canvas
-	const centerX = canvas.width / 2,
-		centerY = canvas.height / 2;
-
-	const date = new Date();
-
-	let hr = date.getHours();
-	let min = date.getMinutes();
-	let sec = date.getSeconds();
-	let ms = date.getMilliseconds();
-
-	if(hr > 12)
-	{
-		amOrPm = 'PM';
-		hr -= 12;
-	}
-
-	/* Defines how much radians each hand should move */
-	let radH = 0.000008333 * ( ( hr * 60 * 60 * 1000 ) + ( min * 60 * 1000 ) + ( sec * 1000 ) + ms );
-	let radM = 0.0001 * ( ( min * 60 * 1000 ) + ( sec * 1000 ) + ms );
-	let radS = 0.006 * ( ( sec * 1000 ) + ms );
-
-
-	// Hour Hand
-	drawCircle(centerX, centerY, 110, 0, 360 , false, hourInactiveColor, 'stroke', 90);
-	drawCircle(centerX, centerY, 110, threePIByTwo, rad(radH) + threePIByTwo, false, hourActiveColor, 'stroke', 90);
-
-	// Minute Hand
-	drawCircle(centerX, centerY, 180, 0, 360, false, minuteInactiveColor, 'stroke', 50);
-	drawCircle(centerX, centerY, 180, threePIByTwo, rad(radM) + threePIByTwo, false, minuteActiveColor, 'stroke', 50);
-
-	// Second Hand
-	drawCircle(centerX, centerY, 220, 0, 360, false, secondInactiveColor, 'stroke', 30);
-	drawCircle(centerX, centerY, 220, threePIByTwo, rad(radS) + threePIByTwo, false, secondActiveColor, 'stroke', 30);
-
-	// Digital Timer
-	drawCircle(centerX, centerY, 90, 0, 360, false, timerBg, 'fill', '50');
-	drawText(`${hr.toString().padStart(2, "0")}:${min.toString().padStart(2, "0")} ${amOrPm}`, canvas.width / 2 - 60, canvas.height / 2 + 15, '#ffffff', '32px');
-
-	window.requestAnimationFrame(draw);
-}
-
-init();
-
-// Convert degree to radians
-function rad(deg){
-	return  (Math.PI / 180) * deg;
-}
-
-function drawText(text, x, y, color, size) {
-	ctx.font = `${size} "Poppins"`;
-	ctx.fillStyle = color;
-	ctx.fillText(text, x, y);
-}
-
-function drawRect(x, y, width, height, color) {
-	ctx.fillStyle = color;
-	ctx.fillRect(x, y, width, height);
-}
-
-function drawArc(x, y, radius, start, end, clockwise)
-{
-	ctx.beginPath();
-	ctx.arc(x, y, radius, start, end, clockwise);
-}
-
-function drawCircle(x, y, radius, start, end, clockwise, color, type, thickness) {
-	switch (type) {
-		case 'fill':
-			ctx.fillStyle = color;
-			drawArc(x, y, radius, start, end, clockwise)
-			ctx.fill();
-			break;
-		case 'stroke':
-			ctx.strokeStyle = color;
-			ctx.lineWidth = thickness;
-			drawArc(x, y, radius, start, end, clockwise)
-			ctx.stroke();
-			break
-	}
-}
-window.onload = function() {
-  var map = L.map('map').setView([21.859246, 79.101563], 3);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {maxZoom: 18,}).addTo(map);
-};
-
-
-window.onload = function() {
-  // Initialize the map centered at a default location
-  const map = L.map('map').setView([21.859246, 79.101563], 3); // Center on world view
-
-  // Load map tiles from OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 18,
-  }).addTo(map);
-
-  // Variable to hold the selected marker
-  let marker;
-
-  // Event listener for clicking on the map
-  map.on('click', function(e) {
-    const lat = e.latlng.lat;
-    const lng = e.latlng.lng;
-
-    // Automatically update latitude and longitude fields
-    document.getElementById('latitude').value = lat.toFixed(6);
-    document.getElementById('longitude').value = lng.toFixed(6);
-
-    // Update marker position if it exists, or create a new one
-    if (marker) {
-      marker.setLatLng([lat, lng]);
-    } else {
-      marker = L.marker([lat, lng]).addTo(map);
+    // Set canvas dimensions responsive to screen size
+    function setCanvasSize() {
+      const size = Math.min(150, window.innerWidth / 4);
+      canvas.width = size;
+      canvas.height = size;
     }
 
-    // Display the coordinates in a popup above the marker
-    marker.bindPopup("Lat: " + lat.toFixed(6) + "<br>Lng: " + lng.toFixed(6)).openPopup();
-  });
-};
+    // Call setCanvasSize initially and on window resize
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
 
+    // Set the start point of the clock hands
+    const threePIByTwo = (3 * Math.PI) / 2;
+    let amOrPm = 'AM';
 
-const toggleSwitch = document.getElementById('toggleSwitch');
-const blocks = document.getElementsByClassName('block');
-const button1 = document.querySelector('.glow-on-hover1');
-const button2 = document.querySelector('.glow-on-hover2');
-const body = document.querySelector('body');
-const h1=document.querySelector('.main_text');
-body.classList.add('background-animation');
+    // Define colors for clock hands
+    const hourActiveColor = '#39D98A',
+      minuteActiveColor = '#3E7BFA',
+      secondActiveColor = '#FDAC42';
 
-toggleSwitch.addEventListener('click', function () {
-  if (body.classList.contains('light-mode')) {
-    body.classList.remove('light-mode');
-    body.classList.add('dark-mode');
-  }
-  if (toggleSwitch.classList.contains('day')) {
-    toggleSwitch.classList.remove('day');
-    toggleSwitch.classList.add('night');
+    const hourInactiveColor = '#3C4043',
+      minuteInactiveColor = '#2E3134',
+      secondInactiveColor = '#282A2D';
 
-    // Apply dark mode styles
-    for (let block of blocks) {
-      block.style.backgroundColor = '#201f1e';
-      block.style.color = 'white';
+    const timerBg = '#282A2D';
+
+    function draw() {
+      // Finding center point of canvas
+      const centerX = canvas.width / 2,
+        centerY = canvas.height / 2;
+      
+      // Calculate scale based on canvas size for responsive elements
+      const scale = canvas.width / 150;
+
+      const date = new Date();
+      let hr = date.getHours();
+      let min = date.getMinutes();
+      let sec = date.getSeconds();
+      let ms = date.getMilliseconds();
+
+      if (hr > 12) {
+        amOrPm = 'PM';
+        hr -= 12;
+      }
+
+      /* Defines how much radians each hand should move */
+      let radH = 0.000008333 * ((hr * 60 * 60 * 1000) + (min * 60 * 1000) + (sec * 1000) + ms);
+      let radM = 0.0001 * ((min * 60 * 1000) + (sec * 1000) + ms);
+      let radS = 0.006 * ((sec * 1000) + ms);
+
+      // Clear canvas for redrawing
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Scale radius based on canvas size
+      const hourRadius = 30 * scale;
+      const minuteRadius = 50 * scale;
+      const secondRadius = 60 * scale;
+      const digitalRadius = 25 * scale;
+
+      // Scale stroke width based on canvas size
+      const hourStroke = 25 * scale;
+      const minuteStroke = 14 * scale;
+      const secondStroke = 8 * scale;
+
+      // Hour Hand
+      drawCircle(centerX, centerY, hourRadius, 0, 360, false, hourInactiveColor, 'stroke', hourStroke);
+      drawCircle(centerX, centerY, hourRadius, threePIByTwo, rad(radH) + threePIByTwo, false, hourActiveColor, 'stroke', hourStroke);
+
+      // Minute Hand
+      drawCircle(centerX, centerY, minuteRadius, 0, 360, false, minuteInactiveColor, 'stroke', minuteStroke);
+      drawCircle(centerX, centerY, minuteRadius, threePIByTwo, rad(radM) + threePIByTwo, false, minuteActiveColor, 'stroke', minuteStroke);
+
+      // Second Hand
+      drawCircle(centerX, centerY, secondRadius, 0, 360, false, secondInactiveColor, 'stroke', secondStroke);
+      drawCircle(centerX, centerY, secondRadius, threePIByTwo, rad(radS) + threePIByTwo, false, secondActiveColor, 'stroke', secondStroke);
+
+      // Digital Timer (only if canvas is large enough)
+      if (canvas.width >= 120) {
+        drawCircle(centerX, centerY, digitalRadius, 0, 360, false, timerBg, 'fill', '50');
+        // Adjust font size based on canvas size
+        const fontSize = Math.max(8, Math.floor(10 * scale));
+        drawText(`${hr.toString().padStart(2, "0")}:${min.toString().padStart(2, "0")} ${amOrPm}`, 
+                 centerX - (20 * scale), 
+                 centerY + (5 * scale), 
+                 '#ffffff', 
+                 `${fontSize}px`);
+      }
+
+      window.requestAnimationFrame(draw);
     }
 
-    info.style.color='white';
-    inner.style.color='white';
-    h1.style.color='white'
-    button1.style.setProperty('--glow-background', 'white');
-    button2.style.setProperty('--glow-background', 'white');
-    button1.style.color = '#000';
-    button2.style.color = '#000';
+    // Start drawing
+    window.requestAnimationFrame(draw);
 
-  } else {
-    toggleSwitch.classList.remove('night');
-    toggleSwitch.classList.add('day');
-
-    // Apply light mode styles
-    for (let block of blocks) {
-      block.style.backgroundColor = 'white';
-      block.style.color = 'black';
+    // Convert degree to radians
+    function rad(deg) {
+      return (Math.PI / 180) * deg;
     }
 
-    inner.style.color='rgb(46, 44, 44)';
-    body.classList.remove('dark-mode');
-    body.classList.add('light-mode');
-    h1.style.color='#3c096b';
-    button1.style.color = '#fff';
-    button2.style.color = '#fff';
-    button1.style.setProperty('--glow-background', 'black');
-    button2.style.setProperty('--glow-background', 'black');
-    body.classList.remove('background-animation');
-    body.classList.add('background-animation');
-    info.style.color='black';
-  }
-});
+    function drawText(text, x, y, color, size) {
+      ctx.font = `${size} "Poppins"`;
+      ctx.fillStyle = color;
+      ctx.textAlign = 'center';
+      ctx.fillText(text, x, y);
+    }
 
+    function drawArc(x, y, radius, start, end, clockwise) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, start, end, clockwise);
+    }
 
-</script>
+    function drawCircle(x, y, radius, start, end, clockwise, color, type, thickness) {
+      switch (type) {
+        case 'fill':
+          ctx.fillStyle = color;
+          drawArc(x, y, radius, start, end, clockwise)
+          ctx.fill();
+          break;
+        case 'stroke':
+          ctx.strokeStyle = color;
+          ctx.lineWidth = thickness;
+          drawArc(x, y, radius, start, end, clockwise)
+          ctx.stroke();
+          break
+      }
+    }
+
+    // Initialize map
+    window.onload = function() {
+      // Initialize the map centered at a default location
+      const map = L.map('map').setView([21.859246, 79.101563], 3);
+
+      // Load map tiles from OpenStreetMap
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Variable to hold the selected marker
+      let marker;
+
+      // Event listener for clicking on the map
+      map.on('click', function(e) {
+        const lat = e.latlng.lat;
+        const lng = e.latlng.lng;
+
+        // Automatically update latitude and longitude fields
+        document.getElementById('latitude').value = lat.toFixed(6);
+        document.getElementById('longitude').value = lng.toFixed(6);
+
+        // Update marker position if it exists, or create a new one
+        if (marker) {
+          marker.setLatLng([lat, lng]);
+        } else {
+          marker = L.marker([lat, lng]).addTo(map);
+        }
+
+        // Display the coordinates in a popup above the marker
+        marker.bindPopup("Lat: " + lat.toFixed(6) + "<br>Lng: " + lng.toFixed(6)).openPopup();
+      });
+
+      // Fix map size after it becomes visible
+      const containerObserver = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.attributeName === 'class' && !container.classList.contains('hide')) {
+            setTimeout(function() {
+              map.invalidateSize();
+            }, 100);
+          }
+        });
+      });
+
+      containerObserver.observe(container, { attributes: true });
+    };
+
+    // Theme toggle
+    const toggleSwitch = document.getElementById('toggleSwitch');
+    const blocks = document.getElementsByClassName('block');
+    const button1 = document.querySelector('.glow-on-hover1');
+    const button2 = document.querySelector('.glow-on-hover2');
+    const body = document.querySelector('body');
+    const h1 = document.querySelector('.main_text');
+
+    toggleSwitch.addEventListener('click', function() {
+      if (toggleSwitch.classList.contains('day')) {
+        toggleSwitch.classList.remove('day');
+        toggleSwitch.classList.add('night');
+
+        // Apply dark mode
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        
+        // Apply dark mode styles to blocks
+        for (let block of blocks) {
+          block.style.backgroundColor = '#201f1e';
+          block.style.color = 'white';
+        }
+
+        // Apply styles to other elements
+        if (weatherInfo) weatherInfo.style.color = 'white';
+        innerText.style.color = 'white';
+        h1.style.color = 'white';
+        button1.style.setProperty('--glow-background', 'white');
+        button2.style.setProperty('--glow-background', 'white');
+        button1.style.color = '#000';
+        button2.style.color = '#000';
+
+        // Apply dark style to name form if visible
+        if (!firstDiv.classList.contains('hide')) {
+          document.getElementById('user_form').style.backgroundColor = '#333';
+          document.getElementById('user_form').style.color = 'white';
+        }
+
+      } else {
+        toggleSwitch.classList.remove('night');
+        toggleSwitch.classList.add('day');
+
+        // Apply light mode
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+
+        // Apply light mode styles to blocks
+        for (let block of blocks) {
+          block.style.backgroundColor = 'white';
+          block.style.color = 'black';
+        }
+
+        // Apply styles to other elements
+        innerText.style.color = 'rgb(46, 44, 44)';
+        h1.style.color = '#3c096b';
+        button1.style.color = '#fff';
+        button2.style.color = '#fff';
+        button1.style.setProperty('--glow-background', 'black');
+        button2.style.setProperty('--glow-background', 'black');
+        if (weatherInfo) weatherInfo.style.color = 'black';
+
+        // Apply light style to name form if visible
+        if (!firstDiv.classList.contains('hide')) {
+          document.getElementById('user_form').style.backgroundColor = '#f0f0f0';
+          document.getElementById('user_form').style.color = 'black';
+        }
+      }
+    });
+
+    // Handle window resize for map
+    window.addEventListener('resize', function() {
+      if (L && L.map && !container.classList.contains('hide')) {
+        setTimeout(function() {
+          map.invalidateSize();
+        }, 100);
+      }
+    });
+  </script>
 </body>
 </html>
