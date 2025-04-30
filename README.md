@@ -27,7 +27,16 @@ A simple web application built with Flask that sends an email notification if it
 
 ## 📂 Project Structure
 
-Rain-Informer-Mailer/ ├── static/ # CSS, JS, images and other front-end assets │ ├── css/ │ │ └── styles.css │ ├── js/ │ │ └── main.js │ └── images/ │ └── logo.png ├── templates/ # Jinja2 HTML templates │ ├── index.html │ └── layout.html ├── app.py # Main Flask application ├── requirements.txt # Python dependencies ├── README.md # Project documentation └── .env # Environment variables (API keys, email credentials)
+Rain_Informer_Mailer/
+├── static/                     # Contains CSS, JS, and other static files
+├── templates/                  # HTML templates for rendering pages
+├── app.py                      # Main Flask application
+├── requirements.txt            # Python dependencies
+├── Procfile                   # Render deployment configuration
+├── .gitignore                 # Git ignore file
+└── README.md                  # Project documentation
+
+
 
 ## 1️⃣ Run the Application
 1. `python app.py`  
