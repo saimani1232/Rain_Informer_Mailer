@@ -749,7 +749,7 @@ Add this CSS just before the existing media query for the container:
 
   <div class="container">
     <div class="block">
-      <h3><img src="/static/compass.png" alt="Compass" class="compass"> Check by Coordinates</h3>
+      <h3><img class="compass" src="/static/map.png">By Latitude & Longitude<img class="compass" src="/static/location.png"></h3>
       <form action="/" method="post">
         <input type="hidden" name="input_type" value="latlong">
         <label for="latitude">Latitude:</label>
@@ -763,7 +763,7 @@ Add this CSS just before the existing media query for the container:
     </div>
 
     <div class="block">
-      <h3><img src="/static/city.png" alt="City" class="compass"> Check by City</h3>
+      <h3><img src="/static/cityscape.png" class="compass"> City Name <img src="/static/architecture-and-city.png" class="compass"></h3>
       <form action="/" method="post">
         <input type="hidden" name="input_type" value="city">
         <label for="city_name">City Name:</label>
@@ -775,7 +775,7 @@ Add this CSS just before the existing media query for the container:
     </div>
 
     <div class="block">
-      <h3><img src="/static/map.png" alt="Map" class="compass"> Use Interactive Map</h3>
+      <h3>Use Interactive Map</h3>
       <div id="map"></div>
       <div class="map-inputs">
         <div>
