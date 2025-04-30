@@ -29,11 +29,17 @@ A simple web application built with Flask that sends an email notification if it
 
 Rain_Informer_Mailer/
 ├── static/                     # Contains CSS, JS, and other static files
+
 ├── templates/                  # HTML templates for rendering pages
+
 ├── app.py                      # Main Flask application
+
 ├── requirements.txt            # Python dependencies
+
 ├── Procfile                   # Render deployment configuration
+
 ├── .gitignore                 # Git ignore file
+
 └── README.md                  # Project documentation
 
 
